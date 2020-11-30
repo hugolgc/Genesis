@@ -1,0 +1,1 @@
+<p>Contrôleur index</p>
