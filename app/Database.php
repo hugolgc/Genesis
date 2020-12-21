@@ -52,7 +52,7 @@ class Database
     return ($this->count($statement) === 0) ? FALSE : TRUE;
   }
 
-  public function select($table, $only = FALSE)
+  public function store($table, $only = FALSE)
   {
     $req = $this->getPDO()->query("SELECT * FROM $table");
     $res = ($only === TRUE) ? $req->fetch(PDO::FETCH_OBJ) : $req->fetchAll(PDO::FETCH_OBJ);
