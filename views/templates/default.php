@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <title>Genesis</title>
-    <link rel="shortcut icon" href="<?= src('icon.png') ?>" type="image/x-icon">
-    <link rel="stylesheet" href="<?= css('genesis.font.css') ?>">
+    <link rel="shortcut icon" href="<?= src('favicon.ico') ?>">
+    <link rel="stylesheet" href="<?= css('genesis') ?>">
   </head>
-  <body class="font-genesis">
+  <body class="genesis">
     <h1>Genesis</h1>
     <nav>
-      <ul>
-        <li>
-          <a href="<?= page('index') ?>">Index</a>
-        </li>
-      </ul>
+      <a href="<?= page('index') ?>">Index</a>
     </nav>
     <?= $content ?>
-    <script charset="utf-8" src="<?= js('jquery.min.js') ?>"></script>
+    <script src="<?= js('jquery') ?>"></script>
   </body>
 </html>

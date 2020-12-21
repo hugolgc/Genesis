@@ -11,8 +11,8 @@ $view = new View();
 
 function page($page = 'index') { return "?p=$page"; }
 function single($id) { return "?p=single&id=$id"; }
-function css($style) { return "assets/css/$style"; }
-function js($script) { return "assets/js/$script"; }
+function css($style) { return "assets/css/$style.css"; }
+function js($script) { return "assets/js/$script.js"; }
 function src($file) { return "assets/src/$file"; }
 function secure($string) { return htmlspecialchars(addslashes($string)); }
 function location($page = 'index') { header("location: ?p=$page"); }

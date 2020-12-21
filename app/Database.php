@@ -2,7 +2,6 @@
 
 class Database
 {
-
   private $db_name;
   private $db_host;
   private $db_user;
@@ -53,4 +52,13 @@ class Database
     return ($this->count($statement) === 0) ? FALSE : TRUE;
   }
 
+  public function find($table, $value, $field = 'id')
+  {
+    return $this->getPDO()->query("SELECT * FROM $table WHERE $field = '$value'")->fetch(PDO::FETCH_OBJ);
+  }
+
+  public function findAll($table, $value, $field = 'id')
+  {
+    return $this->getPDO()->query("SELECT * FROM $table WHERE $field = '$value'")->fetchAll(PDO::FETCH_OBJ);
+  }
 }
