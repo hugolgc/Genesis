@@ -52,12 +52,20 @@ class Database
     return ($this->count($statement) === 0) ? FALSE : TRUE;
   }
 
+  public function select($table, $only = FALSE)
+  {
+    $req = $this->getPDO()->query("SELECT * FROM $table");
+    $res = ($only === TRUE) ? $req->fetch(PDO::FETCH_OBJ) : $req->fetchAll(PDO::FETCH_OBJ);
+
+    return $res;
+  }
+
   public function find($table, $value, $field = 'id')
   {
     return $this->getPDO()->query("SELECT * FROM $table WHERE $field = '$value'")->fetch(PDO::FETCH_OBJ);
   }
 
-  public function findAll($table, $value, $field = 'id')
+  public function findAll($table, $value, $field = 'email')
   {
     return $this->getPDO()->query("SELECT * FROM $table WHERE $field = '$value'")->fetchAll(PDO::FETCH_OBJ);
   }

@@ -2,11 +2,15 @@
 
 require '../app/Autoload.php';
 
-//$connect = new Database('db_name');
+$connect = new Database('blog');
 
 if ($page === 'index')
 {
-  $view->render('home');
+  $view->render('home', $connect->list('article'));
+}
+elseif ($page === 'single')
+{
+  $view->render('single', $connect->find('article', $id));
 }
 else
 {
