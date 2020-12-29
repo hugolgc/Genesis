@@ -31,6 +31,12 @@ class View
     }
   }
 
+  public function json($content)
+  {
+    header('Content-Type: application/json');
+    echo json_encode($content);
+  }
+
   private function viewFile($view)
   {
     return "../views/$view.php";
