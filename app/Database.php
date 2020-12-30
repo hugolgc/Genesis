@@ -91,6 +91,38 @@ class Database
     return $this->getPDO()->lastInsertId();
   }
 
+  public function edit($table, $data, $field = 'id', $value = 'no_value')
+  {
+    $count = (gettype($data) === 'object') ? count(get_object_vars($data)) : count($data);
+    $fields = $this->getPDO()->query("DESCRIBE $table")->fetchAll(PDO::FETCH_ASSOC);
+    $statement = "UPDATE $table SET "; $index = NULL;
+
+    $i = 0; foreach ($data as $column)
+    {
+      if ($fields[$i]['Field'] === $field) $index = (gettype($data) === 'object') ? $field : $i;
+      $statement .= $fields[$i]['Field'] . ' = ';
+      if ($column === NULL) $statement .= 'null';
+      elseif ($column === TRUE) $statement .= 1;
+      elseif ($column === FALSE) $statement .= 0;
+      else $statement .= '"' . $column . '"'; $i++;
+      if ($i < $count) $statement .= ',';
+    }
+
+    if ($index === NULL) die("Le champ '$field' n'existe pas.");
+    elseif ($value === 'no_value')
+    {
+      $value = (gettype($data) === 'object') ? $data->$index : $data[$index];
+      $condition = '"' . $value . '"';
+    }
+    elseif ($value === NULL) $condition = 'null';
+    elseif ($value === TRUE) $condition = 1;
+    elseif ($value === FALSE) $condition = 0;
+    else $condition = '"' . $value . '"';
+    $statement .= " WHERE $field = $condition";
+    
+    $this->getPDO()->query($statement);
+  }
+
   public function throw($table, $value, $field = 'id')
   {
     $this->getPDO()->query("DELETE FROM $table WHERE $field = " . '"' . $value . '"');
