@@ -32,8 +32,8 @@ class Database
   {
     $req = $this->getPDO()->query($statement);
     $res = ($only === TRUE) ? $req->fetch(PDO::FETCH_OBJ) : $req->fetchAll(PDO::FETCH_OBJ);
-
-    return $res;
+    
+    return ($this->check($res)) ? $res : FALSE;
   }
 
   public function set($statement)
