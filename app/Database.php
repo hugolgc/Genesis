@@ -62,13 +62,42 @@ class Database
 
   public function find($table, $value, $field = 'id')
   {
-    $res = $this->getPDO()->query("SELECT * FROM $table WHERE $field = '$value'")->fetch(PDO::FETCH_OBJ);
+    $res = $this->getPDO()->query("SELECT * FROM $table HAVING $field = " . '"' . $value . '"')->fetch(PDO::FETCH_OBJ);
     return ($this->check($res)) ? $res : FALSE;
   }
 
   public function findAll($table, $value, $field = 'email')
   {
-    $res = $this->getPDO()->query("SELECT * FROM $table WHERE $field = '$value'")->fetchAll(PDO::FETCH_OBJ);
+    $res = $this->getPDO()->query("SELECT * FROM $table HAVING $field = " . '"' . $value . '"')->fetchAll(PDO::FETCH_OBJ);
     return ($this->check($res)) ? $res : FALSE;
+  }
+
+  public function add($table, $data)
+  {
+    $statement = "INSERT INTO $table VALUES (";
+    $i = 0; foreach ($data as $value)
+    { if ($value === null) $statement .= 'null';
+      elseif ($value === true) $statement .= 1;
+      elseif ($value === false) $statement .= 0;
+      else $statement .= '"' . $value . '"'; $i++;
+      if ($i < count($data)) $statement .= ',';
+    } $statement .= ')';
+    
+    $this->getPDO()->query($statement);
+  }
+
+  public function newId()
+  {
+    return $this->getPDO()->lastInsertId();
+  }
+
+  public function throw($table, $value, $field = 'id')
+  {
+    $this->getPDO()->query("DELETE FROM $table WHERE $field = " . '"' . $value . '"');
+  }
+
+  public function throwAll($table)
+  {
+    $this->getPDO()->query("DELETE FROM $table");
   }
 }
