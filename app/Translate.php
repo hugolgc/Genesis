@@ -24,7 +24,7 @@ class Translate
         foreach ($languages as $language => $value) if ($language === $target) { return $value; $result++; break; }
         break;
       }
-    if ($result === 0) die("Pas de traduction pour le language '$target' de '$wording'");
+    if ($result === 0) die("Pas de traduction pour le language '$target' dans '$wording'");
   }
 
   public function getLang()
