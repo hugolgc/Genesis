@@ -10,5 +10,5 @@ if ($page === 'index')
 }
 else
 {
-  $view->send('Aucun contrôleur associé à cette route');
+  $view->send('Aucun contrôleur associé à cette route', false);
 }
