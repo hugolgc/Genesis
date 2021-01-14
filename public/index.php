@@ -3,11 +3,10 @@
 require '../app/Autoload.php';
 
 //$connect = new Database('db_name');
-$translate = new Translate();
 
 if ($page === 'index')
 {
-  $view->render('home', $translate);
+  $view->render('home', new Translate());
 }
 else
 {
