@@ -11,6 +11,7 @@ $view = new View();
 
 function page($page = 'index') { return "?p=$page"; }
 function single($id) { return "?p=single&id=$id"; }
+function lang($lang = 'fr', $page = 'index') { return "?lang=$lang&p=$page"; }
 function css($style) { return "assets/css/$style.css"; }
 function js($script) { return "assets/js/$script.js"; }
 function src($file) { return "assets/src/$file"; }

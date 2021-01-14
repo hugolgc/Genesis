@@ -1,1 +1,1 @@
-<p>Contrôleur Index</p>
+<p><?= $data->display('header') ?></p>

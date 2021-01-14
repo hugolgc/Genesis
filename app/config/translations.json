@@ -1,0 +1,14 @@
+{
+  "header": {
+    "fr": "Bonjour !",
+    "en": "Hello !",
+    "es": "Buenos dias !",
+    "de": "Hallo !"
+  },
+  "example": {
+    "fr": "Français",
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsche"
+  }
+}
