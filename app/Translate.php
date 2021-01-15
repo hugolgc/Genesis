@@ -27,6 +27,11 @@ class Translate
     if ($result === 0) die("Pas de traduction pour le language '$target' dans '$wording'");
   }
 
+  public function page($page = 'index')
+  {
+    return "?lang=$this->language&p=$page";
+  }
+
   public function getLang()
   {
     return $target;
