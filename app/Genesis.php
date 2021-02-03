@@ -22,3 +22,4 @@ function stopSession(): void
 }
 
 function secure(string $slug): string { return trim(stripslashes(htmlspecialchars($slug))); }
+function location(string $path = '/'): void { header("location: $path"); }
