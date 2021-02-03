@@ -1,0 +1,19 @@
+@import 'tailwind.css';
+
+.sunset {
+  background: #ee0979;
+  background: -webkit-linear-gradient(to right, #ee0979, #ff6a00);
+  background: linear-gradient(to right, #ee0979, #ff6a00);
+}
+
+.magenta {
+  background: #FC466B;
+  background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+  background: linear-gradient(to right, #3F5EFB, #FC466B);
+}
+
+.wild {
+  background: #11998e;
+  background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+  background: linear-gradient(to right, #38ef7d, #11998e);
+}

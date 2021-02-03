@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/src/favicon.ico" type="image/x-icon">
+    
+    <title>{{$ title }}Genesis{{/ title }}</title>
+  
+    {{$ styles }}
+    <link rel="stylesheet" href="/assets/css/master.css">
+    {{/ styles }}
+  
+  </head>
+  <body class="min-h-screen flex justify-center items-center {{ random }}">
+    
+    <main>{{$ body }}{{/ body }}</main>
+    
+    {{$ scripts }}
+    <script src="/assets/js/jquery.js"></script>
+    {{/ scripts }}
+  
+  </body>
+</html>
