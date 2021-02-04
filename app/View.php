@@ -14,7 +14,8 @@ class View
     echo (new Mustache_Engine([
       'pragmas' => [Mustache_Engine::PRAGMA_BLOCKS],
       'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/views', $this->options),
-      'partials_loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/views/layouts', $this->options)
+      'partials_loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/views/layouts', $this->options),
+      'helpers' => ['get' => $_GET, 'post' => $_POST, 'session' => $_SESSION]
     ]))->render($view, $data);
   }
 
