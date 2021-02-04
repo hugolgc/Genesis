@@ -67,7 +67,7 @@ class Entity
 
   public function search(string $table, array $data, bool $fetch = true)
   {
-    if (empty($data)) die('<pre>Error ~ no value entered for add()</pre>');
+    if (empty($data)) die('<pre>Error ~ no value entered for search()</pre>');
     $statement = "SELECT * FROM $table WHERE "; $i = 0;
     foreach ($data as $key => $value)
     { $i++; $statement .= "$key = :$key";
