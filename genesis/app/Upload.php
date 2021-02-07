@@ -14,7 +14,7 @@ class Upload
   private $size;
   private $tmp_name;
 
-  public function __construct($file, bool $rename = TRUE, float $limit = 2, array $extensions = array('jpg', 'jpeg', 'png'), string $target = '../../public/assets/src/')
+  public function __construct($file, bool $rename = TRUE, float $limit = 2, array $extensions = array('jpg', 'jpeg', 'png'), string $target = '../public/assets/src/')
   {
     $this->file = $file;
     $this->limit = floatval($limit) * 1000000;
