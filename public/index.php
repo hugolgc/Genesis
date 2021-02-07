@@ -1,6 +1,6 @@
 <?php
 
-require dirname(__DIR__) . '/app/Genesis.php';
+require dirname(__DIR__) . '/genesis/autoload.php';
 
 $app = new Router;
 
