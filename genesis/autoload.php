@@ -21,5 +21,6 @@ function stopSession(): void
   } session_destroy();
 }
 
+function trash($name, $folder = 'figures', $path = '../public/assets/') { unlink($path . $folder . $name); }
 function secure(string $slug): string { return trim(stripslashes(htmlspecialchars($slug))); }
 function location(string $path = '/'): void { header("location: $path"); }
