@@ -1,10 +1,9 @@
 <?php
 
-$handler = dirname(__DIR__);
-require "$handler/genesis/vendor/autoload.php";
+require '../genesis/vendor/autoload.php';
 
 $app = ['Database', 'Router', 'Server', 'Upload', 'View'];
-foreach ($app as $class) require_once "$handler/genesis/app/$class.php";
+foreach ($app as $class) require_once "../genesis/app/$class.php";
 
 function startSession(): void
 { session_start();

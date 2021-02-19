@@ -29,7 +29,7 @@ class Server
     switch (gettype($this->callback))
     {
       case 'array':
-        require_once dirname(dirname(__DIR__)) . '/controller/' . $this->callback[0] . '.php';
+        require_once '../controller/' . $this->callback[0] . '.php';
         $call = new ReflectionMethod($this->callback[0], $this->callback[1]);
         $call->invokeArgs(new $this->callback[0](), $this->matches);
         break;

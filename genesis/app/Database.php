@@ -30,7 +30,7 @@ class Database
 
   private function getConfig()
   {
-    $config = dirname(dirname(__DIR__)) . '/config.json';
+    $config = '../config.json';
     if (!file_exists($config)) die('<pre>Error ~ undefined database configuration</pre>');
     ob_start(); require $config; return json_decode(ob_get_clean())->database;
   }
