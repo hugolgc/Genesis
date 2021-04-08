@@ -23,3 +23,4 @@ function stopSession(): void
 function trash($name, $path = '../public/assets/src/') { unlink($path . $name); }
 function secure(string $slug): string { return trim(stripslashes(htmlspecialchars($slug))); }
 function location(string $path = '/'): void { header("location: $path"); }
+function debug($code) { echo '<pre>'; var_dump($code); echo '<pre>'; die; }
