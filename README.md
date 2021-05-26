@@ -6,4 +6,4 @@ git clone https://github.com/hugolgc/Genesis.git project_name
 cd project_name && composer install
 ```
 
-Déplacer **/hugolg** dans **/vendor**
+Déplacer **/hugolgc** dans **/vendor**
