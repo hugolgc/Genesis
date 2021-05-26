@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+
+{% block style %}
+<style>
+
+  body {
+    margin: 0;
+    background-color: black;
+  }
+
+  main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0;
+    font: 64px sans-serif;
+    color: white;
+  }
+
+</style>
+{% endblock %}
+
+{% block body %}
+<main>
+  <h1>{{ message }}</h1>
+</main>
+{% endblock %}

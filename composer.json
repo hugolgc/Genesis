@@ -1,0 +1,19 @@
+{
+    "name": "hugolgc/genesis",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.3",
+        "rakibtg/sleekdb": "^2.10"
+    },
+    "authors": [
+        {
+            "name": "hugolgc",
+            "email": "lagache.hugo@hotmail.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Genesis\\": "vendor/hugolgc/genesis"
+        }
+    }
+}
