@@ -34,11 +34,17 @@ class Link
         $callback = explode('::', $this->callback);
         require_once '../controllers/' . $callback[0] . '.php';
         $call = new ReflectionMethod($callback[0], $callback[1]);
-        echo $call->invokeArgs(new $callback[0](new FilesystemLoader('../views')), $this->matches); break;
+        $action = $call->invokeArgs(new $callback[0](new FilesystemLoader('../views')), $this->matches); break;
 
-      case 'object': echo call_user_func_array($this->callback, $this->matches); break;
+      case 'object': $action = call_user_func_array($this->callback, $this->matches); break;
 
       default: die('<pre>Error ~ use an object or an array</pre>');
+    }
+
+    switch (gettype($action))
+    {
+      case 'integer': case 'double': case 'string': echo $action; break;
+      case 'array': case 'object': case 'boolean': var_dump($action); break;
     }
   }
 }

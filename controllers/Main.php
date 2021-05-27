@@ -1,5 +1,6 @@
 <?php
 
+use Genesis\Api;
 use SleekDB\Store;
 use Twig\Environment as Controller;
 
@@ -35,7 +36,7 @@ class Main extends Controller
      * 
      * https://sleekdb.github.io/
      */
-    $developerStore = new Store('users');
+    $developerStore = new Store('users', '../models');
     
     $developer = [
       'name' => '@hugolgc',
@@ -47,6 +48,6 @@ class Main extends Controller
 
     if (empty($developerStore->findAll())) $developerStore->insert($developer);
 
-    return $this->json($developerStore->findAll());
+    return Api::json($developerStore->findAll());
   }
 }
