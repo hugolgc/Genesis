@@ -36,7 +36,7 @@ class Main extends Controller
      * 
      * https://sleekdb.github.io/
      */
-    $developerStore = new Store('users', '../models');
+    $developerStore = new Store('Users', '../models');
     
     $developer = [
       'name' => '@hugolgc',
