@@ -1,9 +1,10 @@
 # Genesis • Installation 
 
-```
-git clone https://github.com/hugolgc/Genesis.git project_name
 
-cd project_name && composer install
-```
+Copier et exécuter des commandes à l'emplacement souhaité du projet
 
-Déplacer **/hugolgc** dans **/vendor**
+```
+git clone https://github.com/hugolgc/Genesis.git
+cd Genesis && README.md
+composer install && mv hugolgc vendor
+```
