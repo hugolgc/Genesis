@@ -1,7 +1,7 @@
 # Genesis • Installation 
 
 
-Copier et exécuter des commandes à l'emplacement souhaité du projet
+Copier et exécuter ces commandes à l'emplacement souhaité du projet
 
 ```
 git clone https://github.com/hugolgc/Genesis.git
