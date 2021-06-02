@@ -1,19 +1,21 @@
 # Genesis
-* * *
-* * *
-Genesis est un framework écrit en PHP avec le design pattern MVC. Il intègre un répertoire de base dans lequel vous ajoutez les outils nécessaires à votre projet.
-* * *
-Pour l'utiliser, vous aurez besoin de [Composer](https://getcomposer.org/) avec la version 7.3 de PHP. Copier et exécuter ce bloc de commande à l'emplacement souhaité du projet.
-* * *
+
+<br/>
+
+Genesis est un framework écrit en PHP avec le design pattern MVC. Il intègre un répertoire de base dans lequel vous ajoutez les outils nécessaires à votre projet. Pour l'utiliser, vous aurez besoin de [Composer](https://getcomposer.org/) avec la version 7.3 de PHP. Copier et exécuter ce bloc de commande à l'emplacement souhaité du projet.
+
+<br/>
+
 ```bash
 git clone https://github.com/hugolgc/Genesis.git
 cd Genesis && rm README.md
 composer install && mv hugolgc vendor
 ```
-* * *
+
+<br/>
+
 ## Quickstart
-* * *
-* * *
+
 ```php
 # public/index.php
 
@@ -35,7 +37,11 @@ class Home
   }
 }
 ```
-* * *
+
+Rendez-vous maintenant sur le navigateur à l'adresse /home.
+
+<br/>
+
 ### Ajouter une vue
 ```php
 use Twig\Environment as Controller;
@@ -71,7 +77,9 @@ class Home extends Controller
   </body>
 </html>
 ```
-* * *
+
+<br/>
+
 ### Utiliser les paramètres d'url
 ```php
 $router->get('/home/:id', 'Home::index');
@@ -92,8 +100,9 @@ class Home extends Controller
   }
 }
 ```
-* * *
-* * *
+
+<br/>
+
 ## Méthodes avancées
 Voici une autre manière d'exécuter du code avec le routeur :
 
@@ -102,7 +111,9 @@ $router->get('/home/:id', function (int $id): string {
   return "Hello App - $id";
 });
 ```
-* * *
+
+<br/>
+
 Récupérer les données en utilisant la méthode POST :
 
 ```php
@@ -112,19 +123,23 @@ $router->post('/home', function (): string {
   return 'Hello App - ' . $_POST['name'];
 });
 ```
-* * *
+
+<br/>
+
 Le routeur intègre 4 types de méthodes :
 
 ```php
-$router->get(......);
+$router->get();
 
-$router->post(.....);
+$router->post();
 
-$router->put(......);
+$router->put();
 
-$router->delete(...);
+$router->delete();
 ```
-* * *
+
+<br/>
+
 Définir une route par défaut (l'url ne correspond à aucune route) :
 
 ```php
@@ -136,9 +151,11 @@ $router->start(function() { # Redirection vers l'url /home
   header('location: /home');
 });
 ```
-* * *
+
+<br/>
+
 ## Librairies
 
 [Twig](https://twig.symfony.com/doc/3.x/)
-* * *
+<br>
 [SleekDB](https://sleekdb.github.io/#/installation)
