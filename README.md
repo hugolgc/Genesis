@@ -1,12 +1,11 @@
 # Genesis
 
----
 
 Genesis est un framework écrit en PHP avec le design pattern MVC. Il intègre un répertoire de base dans lequel vous ajoutez les outils nécessaires à votre projet.
 
 Pour l'utiliser, vous aurez besoin de [Composer](https://getcomposer.org/) avec la version 7.3 de PHP. Copier et exécuter ce bloc de commande à l'emplacement souhaité du projet.
 
-```jsx
+```bash
 git clone https://github.com/hugolgc/Genesis.git
 cd Genesis && rm README.md
 composer install && mv hugolgc vendor
@@ -14,7 +13,6 @@ composer install && mv hugolgc vendor
 
 ## Quickstart
 
----
 
 ```php
 # public/index.php
@@ -39,9 +37,6 @@ class Home
 ```
 
 ### Ajouter une vue
-
----
-
 ```php
 use Twig\Environment as Controller;
 
@@ -78,9 +73,6 @@ class Home extends Controller
 ```
 
 ### Utiliser les paramètres d'url
-
----
-
 ```php
 $router->get('/home/:id', 'Home::index');
 ```
@@ -104,9 +96,6 @@ class Home extends Controller
  
 
 ## Méthodes avancées
-
----
-
 Voici une autre manière d'exécuter du code avec le routeur :
 
 ```php
@@ -150,8 +139,6 @@ $router->start(function() { # Redirection vers l'url /home
 ```
 
 ## Librairies
-
----
 
 [Twig](https://twig.symfony.com/doc/3.x/)
 [SleekDB](https://sleekdb.github.io/#/installation)
